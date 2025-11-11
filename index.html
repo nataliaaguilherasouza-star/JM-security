@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <?xml version="1.0" encoding="UTF-8"?>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JM security</title>
+</head>
+<body>
+<style>
+  
+
+.logo img {
+  width: 350px;
+  height: auto;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #0f1115;
+    color: #fff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    flex: 1;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 100px; /* espaço pro menu fixo */
+  }
+
+  h1 {
+    color: #ffd700;
+    margin-bottom: 1rem;
+  }
+
+  /* ===== LOGO ===== */
+  .logo {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .logo img {
+    width: 180px;
+    height: auto;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.1));
+  }
+
+  /* ====== MENU TAB BAR ====== */
+  .tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: #121212;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 2px solid #222;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.6);
+    z-index: 100;
+  }
+
+  .tab {
+    position: relative;
+    width: 120px;
+    height: 50px;
+    color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    font-weight: bold;
+  }
+
+  .tab.active {
+    color: #00bfff;
+    transform: translateY(-10px);
+  }
+
+  .tab::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background: #00bfff;
+    transition: 0.4s;
+  }
+
+  .tab.active::before {
+    width: 60%;
+  }
+
+  /* ====== CONTEÚDOS ====== */
+  section {
+    display: none;
+    animation: slideIn 0.6s ease;
+  }
+
+  section.active {
+    display: block;
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ====== CARROSSEL ====== */
+  .carrossel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .card {
+    background: #1c1f26;
+    border-radius: 15px;
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .titulo {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #ffd700;
+  }
+
+  .preco {
+    font-size: 2em;
+    margin: 10px 0;
+    color: #00bcd4;
+  }
+
+  .descricao {
+    font-size: 0.95em;
+    color: #ccc;
+    margin-bottom: 15px;
+  }
+
+  button {
+    background: #00bcd4;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  button:hover {
+    background: #0097a7;
+  }
+
+  .carrossel::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<section id="contato">
+  <h1>Contato</h1>
+  <p>Entre em contato conosco para orçamentos e dúvidas:</p>
+
+  <div class="contato-info">
+    <p>📞 Telefone: (51)85442147</p>
+    <p>📱 WhatsApp: <a href="https://wa.me/5185442147" target="_blank">Clique para conversar</a></p>
+    <p>📧 E-mail: contato@jmsecurity.com</p>
+</section>
+
+
+<main>
+  <!-- LOGO DA EMPRESA -->
+  <div class="logo">
+  <img src="ChatGPT Image 10 de nov. de 2025, 15_08_33.png" alt="Logo JM Security" width="500">
+  </div>
+
+  <!-- SEÇÕES -->
+  <section id="eventos" class="active">
+    <h1>Eventos</h1>
+    <div class="carrossel">
+      <div class="card">
+        <div class="titulo">Eventos</div>
+        <div class="preco">R$180</div>
+        <div class="descricao">
+          Vigilância profissional<br>
+          Horário: conforme necessidade do cliente
+        </div>
+        <button>Contratar</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="servico">
+    <h1>Serviço Particular</h1>
+    <div class="carrossel">
+      <div class="card">
+        <div class="titulo">Serviço Particular</div>
+        <div class="preco">R$ 2.400</div>
+        <div class="descricao">
+          Horário: 24 horas <br>
+           Segurança pessoal e patrimonial.
+          <br>
+        </div>
+        <button>Contratar</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- MENU INFERIOR -->
+<div class="tab-bar">
+  <div class="tab active" onclick="mostrarAba('eventos', this)">Eventos</div>
+  <div class="tab" onclick="mostrarAba('servico', this)">Serviço</div>
+  <div class="tab" onclick="mostrarAba('contato', this)">Contato</div>
+</div>
+
+<script>
+  function mostrarAba(id, el) {
+    document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+    document.querySelector("#" + id).classList.add("active");
+
+    document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+    el.classList.add("active");
+  }
+</script>
+
+ 
+</body>
+</html>
